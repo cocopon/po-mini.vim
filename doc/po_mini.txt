@@ -1,0 +1,91 @@
+*po-mini.vim*  Provide minimal features for editing gettext PO file
+
+
+==============================================================================
+CONTENTS                                                    *po-mini-contents*
+
+  1. Intro .......................... |po-mini-intro|
+  2. Commands ....................... |po-mini-commands|
+  3. Options ........................ |po-mini-options|
+  4. About .......................... |po-mini-about|
+
+
+==============================================================================
+1. Intro                                                       *po-mini-intro*
+
+*po-mini.vim* is a plugin that provides minimal features for editing a gettext
+PO file. It updates followiing header entries automatically:
+
+        * PO-Revision-Date ~
+        * Last-Translator ~
+        * Language-Team ~
+
+About PO file header entry:
+
+    http://www.gnu.org/software/gettext/manual/html_node/Header-Entry.html
+
+Translator and Team field requires additional settings. See |po-mini-options|
+for more information.
+
+If you don't want to update these headers automatically, use
+|g:po_mini_disable_auto_update|.
+
+
+==============================================================================
+2. Commands                                                 *po-mini-commands*
+
+:PoMiniDisableAutoUpdate                            *:PoMiniDisableAutoUpdate*
+                        Disable auto-updating header entries. You can also
+                        use |g:po_mini_|disable_auto_update| to disable auto-
+                        updating.
+
+:PoMiniUpdate                                                  *:PoMiniUpdate*
+                        Manually update header entries.
+
+:PoMiniUpdateRevisionDate                          *:PoMiniUpdateRevisionDate*
+                        Manually update "PO-Revision-Date" entry.
+
+
+==============================================================================
+3. Options                                                   *po-mini-options*
+
+g:po_mini_disable_auto_update                  *g:po_mini_disable_auto_update*
+                        Set non-zero value to disable auto-updating.
+
+g:po_mini_scan_lines                                    *g:po_mini_scan_lines*
+                        Number of lines to search header entry from the
+                        beginning. The default is 20.
+
+g:po_mini_date_format                                  *g:po_mini_date_format*
+                        Used for "PO-Revision-Date" entry. See |strftime()|
+                        for more information about format string. The default
+                        is "%Y-%m-%d %H:%M%z".
+
+g:po_mini_translator_name                          *g:po_mini_translator_name*
+                        Used for "Last-Translator" entry. If not set, this
+                        field will not update.
+
+g:po_mini_translator_email                        *g:po_mini_translator_email*
+                        Used for "Last-Translator" entry. If not set, this
+                        field will not update.
+
+g:po_mini_language_team_name                    *g:po_mini_language_team_name*
+                        Used for "Language_Team" entry. If not set, this field
+                        will not update.
+
+g:po_mini_language_team_email                  *g:po_mini_language_team_email*
+                        Used for "Language_Team" entry. If not set, this field
+                        will not update.
+
+
+==============================================================================
+4. About                                                       *po-mini-about*
+
+|po-mini.vim| is developed by cocopon and licensed under the MIT License.
+Visit GitHub repository for the latest version:
+
+    https://github.com/cocopon/po-mini.vim
+
+
+==============================================================================
+vim:ft=help:norl:ts=8:tw=78:
