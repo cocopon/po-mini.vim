@@ -1,4 +1,4 @@
-*po-mini.vim*  Provide minimal features for editing gettext PO file
+*po-mini.txt*  Provide minimal features for editing gettext PO file
 
 
 ==============================================================================
