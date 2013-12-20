@@ -59,8 +59,8 @@ endfunction
 
 
 function! po_mini#bufwritepre()
-	if s:get_option('g:po_mini_disable_auto_update', 0)
-				\ || s:get_option('b:po_mini_disable_auto_update', 0)
+	if get(g:, 'po_mini_disable_auto_update', 0)
+				\ || get(b:, 'po_mini_disable_auto_update', 0)
 		return
 	endif
 
@@ -70,11 +70,6 @@ endfunction
 
 
 " Local {{{
-function! s:get_option(name, default)
-	return exists(a:name) ? eval(a:name) : a:default
-endfunction
-
-
 function! s:find_entry(name)
 	let lnum = 1
 	while lnum <= g:po_mini_scan_lines
